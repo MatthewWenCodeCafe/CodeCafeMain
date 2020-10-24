@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 pipenv = "*"
+twine = "*"
+setuptools = "*"
+wheel = "*"
 
 [dev-packages]
 

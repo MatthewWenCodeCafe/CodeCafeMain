@@ -11,7 +11,6 @@ setuptools.setup(
     author_email="mattwen2018@gmail.com",
     description="Code For Code Cafe",
     packages=setuptools.find_packages(),
-    scripts=["bin/collect-photos"],
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
