@@ -1,0 +1,24 @@
+[submodule "code_cafe/p1"]
+	path = code_cafe/p1
+	url = https://github.com/MatthewWenCodeCafe/p1
+[submodule "code_cafe/p2"]
+	path = code_cafe/p2
+	url = https://github.com/MatthewWenCodeCafe/p2
+[submodule "code_cafe/p3"]
+	path = code_cafe/p3
+	url = https://github.com/MatthewWenCodeCafe/p3
+[submodule "code_cafe/p4"]
+	path = code_cafe/p4
+	url = https://github.com/MatthewWenCodeCafe/p4
+[submodule "code_cafe/p5"]
+	path = code_cafe/p5
+	url = https://github.com/MatthewWenCodeCafe/p5
+[submodule "code_cafe/p6"]
+	path = code_cafe/p6
+	url = https://github.com/MatthewWenCodeCafe/p6
+[submodule "code_cafe/p7"]
+	path = code_cafe/p7
+	url = https://github.com/MatthewWenCodeCafe/p7
+[submodule "code_cafe/p8"]
+	path = code_cafe/p8
+	url = https://github.com/MatthewWenCodeCafe/p8
