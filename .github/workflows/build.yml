@@ -1,0 +1,25 @@
+name: Build and Deploy Python Package
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install Pipenv
+        run: pip install pipenv
+      - name: Build packages
+        run: |
+          pipenv install
+          pipenv run python setup.py sdist bdist_wheel
+      - name: Publish to PyPi
+        run: |
+          pipenv run python -m twine upload --repository pypi dist/* --username mwenclubhouse --password "${{secrets.PIP_SECRET_API_KEY}}"
+
