@@ -19,7 +19,5 @@ jobs:
         run: |
           pipenv install
           pipenv run python setup.py sdist bdist_wheel
-      - name: Publish to PyPI
-        run: |
           pipenv run python -m twine upload --repository pypi dist/* --username mwenclubhouse --password ${{ secrets.PIP_SECRET_API_KEY }}
-          
+
