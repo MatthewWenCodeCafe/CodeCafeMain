@@ -9,20 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.7
+      - name: Set up Python 3.8
         uses: actions/setup-python@v1
         with:
-          python-verison: 3.7
-      - name: Install packages
+          python-version: 3.8
+      - name: Install Pipenv
+        run: pip install pipenv
+      - name: Build packages
         run: |
           pipenv install
-      - name: Buck a binary wheel and a source tarball
-        run: |
-          pipenv shell
-          sudo python3 setup.py build
-      - name: Zip and Release
-        uses: thedoctor0/zip-release@master
+          pipenv run python setup.py sdist bdist_wheel
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@master
         with:
-          filename: release.zip
-          path: build
+          pasword: ${{ secrets.PIP_SECRET_API_KEY }}
           
