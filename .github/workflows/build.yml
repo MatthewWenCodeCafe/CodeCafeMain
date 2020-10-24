@@ -1,0 +1,28 @@
+name: Build and Deploy Python Package
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-verison: 3.7
+      - name: Install packages
+        run: |
+          pipenv install
+      - name: Buck a binary wheel and a source tarball
+        run: |
+          pipenv shell
+          sudo python3 setup.py build
+      - name: Zip and Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: release.zip
+          path: build
+          
