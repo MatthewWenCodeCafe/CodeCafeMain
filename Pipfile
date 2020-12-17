@@ -8,6 +8,7 @@ pipenv = "*"
 twine = "*"
 setuptools = "*"
 wheel = "*"
+firebase-admin = "*"
 
 [dev-packages]
 
